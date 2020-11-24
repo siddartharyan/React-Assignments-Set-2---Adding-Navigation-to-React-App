@@ -18,8 +18,8 @@ function App() {
   // };
   return (
     <>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
       <Switch>
         <Route exact default path="/" component={Home} />
         <Route exact path="/about" component={About} />
