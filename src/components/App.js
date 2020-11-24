@@ -1,16 +1,32 @@
-import React, {Component, useState} from "react";
-import '../styles/App.css';
+import React, { Component, useState } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import LocationDisplay from "./LocationDisplay";
+import "../styles/App.css";
 
-class App extends Component {
-    render() {
-
-        return(
-            <div id="main">
-               {/* Do not remove the main div */}
-            </div>
-        )
-    }
+function App() {
+  const Home = () => {
+    return <h1>You are home.</h1>;
+  };
+  const About = () => {
+    return <h1>You are on the about page.</h1>;
+  };
+  const Notfound = () => {
+    return <h1>No match</h1>;
+  };
+  return (
+    <Router>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <div id="main">
+        <Switch>
+          <Route exact default path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route component={Notfound} />
+        </Switch>
+        <LocationDisplay />
+      </div>
+    </Router>
+  );
 }
-
 
 export default App;
