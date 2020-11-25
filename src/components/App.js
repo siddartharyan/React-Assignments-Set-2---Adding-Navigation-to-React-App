@@ -1,10 +1,10 @@
 import React, { Component, useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { LocationDisplay } from "./LocationDisplay";
-import { About } from "./About";
-import { Home } from "./Home";
 import { Notfound } from "./Notfound";
 import "../styles/App.css";
+import Home from "./Home";
+import About from "./About";
 
 function App() {
   // const About = () => {
