@@ -18,20 +18,16 @@ function App() {
   // };
   return (
     <>
-      <ul>
-        <li>
+      <Router>
+        <Switch>
           <Link to="/">Home</Link>
-        </li>
-        <li>
           <Link to="/about">About</Link>
-        </li>
-      </ul>
-      <Switch>
-        <Route exact default path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route component={Notfound} />
-      </Switch>
-      <LocationDisplay />
+          <Route exact default path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route component={Notfound} />
+        </Switch>
+        <LocationDisplay />
+      </Router>
     </>
   );
 }
