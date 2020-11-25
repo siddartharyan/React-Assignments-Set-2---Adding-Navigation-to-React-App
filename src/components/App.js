@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import { LocationDisplay } from "./LocationDisplay";
+import { useLocation } from "react-router";
 // import { Notfound } from "./Notfound";
 import "../styles/App.css";
 // import Home from "./Home";
@@ -15,6 +15,10 @@ function App() {
   };
   const Notfound = () => {
     return <h1>No match</h1>;
+  };
+  const LocationDisplay = () => {
+    let location = useLocation();
+    return <h1 data-testid="location-display">{location.pathname}</h1>;
   };
   return (
     <>
