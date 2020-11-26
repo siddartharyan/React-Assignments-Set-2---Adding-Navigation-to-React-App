@@ -1,25 +1,13 @@
 import React, { Component, useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { useLocation } from "react-router";
-// import { Notfound } from "./Notfound";
+import { Notfound } from "./notfound";
 import "../styles/App.css";
-// import Home from "./Home";
-// import About from "./About";
+import Home from "./home";
+import About from "./about";
+import LocationDisplay from "./locationDisplay";
 
 function App() {
-  const About = () => {
-    return <h1>You are on the about page.</h1>;
-  };
-  const Home = () => {
-    return <h1>You are home.</h1>;
-  };
-  const Notfound = () => {
-    return <h1>No match</h1>;
-  };
-  const LocationDisplay = () => {
-    let location = useLocation();
-    return <h1 data-testid="location-display">{location.pathname}</h1>;
-  };
   return (
     <>
       <Router>
@@ -36,4 +24,5 @@ function App() {
   );
 }
 
+export { Home, About, LocationDisplay };
 export default App;
